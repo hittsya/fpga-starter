@@ -1,0 +1,6 @@
+
+State Machine - |state_machine|sm_state
+Name sm_state.EN_LED_3 sm_state.EN_LED_2 sm_state.EN_LED_1 
+sm_state.EN_LED_1 0 0 0 
+sm_state.EN_LED_2 0 1 1 
+sm_state.EN_LED_3 1 0 1 

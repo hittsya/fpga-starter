@@ -1,0 +1,1187 @@
+Timing Analyzer report for led_shift_reg
+Thu Jun 27 19:41:01 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 Patches 0.02std SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'OscilatorMain'
+ 14. Slow 1200mV 85C Model Hold: 'OscilatorMain'
+ 15. Slow 1200mV 85C Model Metastability Summary
+ 16. Slow 1200mV 0C Model Fmax Summary
+ 17. Slow 1200mV 0C Model Setup Summary
+ 18. Slow 1200mV 0C Model Hold Summary
+ 19. Slow 1200mV 0C Model Recovery Summary
+ 20. Slow 1200mV 0C Model Removal Summary
+ 21. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 22. Slow 1200mV 0C Model Setup: 'OscilatorMain'
+ 23. Slow 1200mV 0C Model Hold: 'OscilatorMain'
+ 24. Slow 1200mV 0C Model Metastability Summary
+ 25. Fast 1200mV 0C Model Setup Summary
+ 26. Fast 1200mV 0C Model Hold Summary
+ 27. Fast 1200mV 0C Model Recovery Summary
+ 28. Fast 1200mV 0C Model Removal Summary
+ 29. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 30. Fast 1200mV 0C Model Setup: 'OscilatorMain'
+ 31. Fast 1200mV 0C Model Hold: 'OscilatorMain'
+ 32. Fast 1200mV 0C Model Metastability Summary
+ 33. Multicorner Timing Analysis Summary
+ 34. Board Trace Model Assignments
+ 35. Input Transition Times
+ 36. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 37. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 38. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Report TCCS
+ 42. Report RSKM
+ 43. Unconstrained Paths Summary
+ 44. Clock Status Summary
+ 45. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                        ;
++-----------------------+------------------------------------------------------------------------+
+; Quartus Prime Version ; Version 23.1std.0 Build 991 11/28/2023 Patches 0.02std SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                                 ;
+; Revision Name         ; led_shift_reg                                                          ;
+; Device Family         ; Cyclone IV E                                                           ;
+; Device Name           ; EP4CE6E22C8                                                            ;
+; Timing Models         ; Final                                                                  ;
+; Delay Model           ; Combined                                                               ;
+; Rise/Fall Delays      ; Enabled                                                                ;
++-----------------------+------------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.5%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------+
+; SDC File List                                             ;
++-----------------------+--------+--------------------------+
+; SDC File Path         ; Status ; Read at                  ;
++-----------------------+--------+--------------------------+
+; timing_constaints.sdc ; OK     ; Thu Jun 27 19:41:00 2024 ;
++-----------------------+--------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++---------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name    ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++---------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; OscilatorMain ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++---------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++----------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                 ;
++-----------+-----------------+---------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name    ; Note ;
++-----------+-----------------+---------------+------+
+; 131.7 MHz ; 131.7 MHz       ; OscilatorMain ;      ;
++-----------+-----------------+---------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++----------------------------------------+
+; Slow 1200mV 85C Model Setup Summary    ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; OscilatorMain ; 12.407 ; 0.000         ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Slow 1200mV 85C Model Hold Summary    ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; OscilatorMain ; 0.453 ; 0.000         ;
++---------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++---------------+-------+---------------------------+
+; Clock         ; Slack ; End Point TNS             ;
++---------------+-------+---------------------------+
+; OscilatorMain ; 9.744 ; 0.000                     ;
++---------------+-------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'OscilatorMain'                                                                ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; 12.407 ; counter[30] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.407 ; counter[30] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.533      ;
+; 12.421 ; counter[30] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.421 ; counter[30] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.519      ;
+; 12.642 ; counter[9]  ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.642 ; counter[9]  ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.298      ;
+; 12.651 ; counter[28] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.651 ; counter[28] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.289      ;
+; 12.656 ; counter[9]  ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.656 ; counter[9]  ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.284      ;
+; 12.665 ; counter[28] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.665 ; counter[28] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.275      ;
+; 12.838 ; counter[12] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.102      ;
+; 12.838 ; counter[12] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.102      ;
+; 12.838 ; counter[12] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.102      ;
+; 12.838 ; counter[12] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.081     ; 7.102      ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'OscilatorMain'                                                                            ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.453 ; debounced_switch  ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 0.746      ;
+; 0.483 ; switch_delay      ; button_pressed    ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 0.776      ;
+; 0.509 ; shift_register[1] ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 0.802      ;
+; 0.511 ; shift_register[4] ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 0.804      ;
+; 0.528 ; shift_register[2] ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 0.821      ;
+; 0.722 ; sync[0]           ; sync[1]           ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.015      ;
+; 0.723 ; shift_register[3] ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.016      ;
+; 0.760 ; counter[3]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.053      ;
+; 0.761 ; counter[5]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.054      ;
+; 0.762 ; counter[17]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.055      ;
+; 0.762 ; counter[27]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.055      ;
+; 0.762 ; counter[29]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.055      ;
+; 0.763 ; counter[6]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.056      ;
+; 0.763 ; counter[9]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.056      ;
+; 0.763 ; counter[16]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.056      ;
+; 0.763 ; counter[31]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.056      ;
+; 0.764 ; counter[12]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.057      ;
+; 0.764 ; counter[14]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.057      ;
+; 0.764 ; counter[18]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.057      ;
+; 0.765 ; counter[10]       ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.058      ;
+; 0.765 ; counter[20]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.058      ;
+; 0.766 ; counter[24]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.059      ;
+; 0.786 ; counter[0]        ; counter[0]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.079      ;
+; 0.940 ; counter[4]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.233      ;
+; 0.943 ; counter[25]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.236      ;
+; 0.945 ; counter[8]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.238      ;
+; 0.948 ; counter[7]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.241      ;
+; 0.948 ; counter[30]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.241      ;
+; 0.951 ; counter[11]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.244      ;
+; 0.951 ; counter[19]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.244      ;
+; 0.952 ; counter[21]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.245      ;
+; 0.952 ; counter[22]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.245      ;
+; 0.959 ; counter[2]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.252      ;
+; 0.961 ; counter[15]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.254      ;
+; 0.963 ; counter[13]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.256      ;
+; 0.967 ; counter[26]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.260      ;
+; 0.967 ; counter[28]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.260      ;
+; 0.968 ; counter[23]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.261      ;
+; 0.995 ; counter[1]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.288      ;
+; 1.115 ; counter[3]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.408      ;
+; 1.116 ; counter[5]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.409      ;
+; 1.116 ; counter[17]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.409      ;
+; 1.117 ; counter[9]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.410      ;
+; 1.117 ; counter[29]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.410      ;
+; 1.117 ; counter[27]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.410      ;
+; 1.124 ; counter[16]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.417      ;
+; 1.124 ; counter[6]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.417      ;
+; 1.124 ; counter[0]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.417      ;
+; 1.125 ; counter[18]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.418      ;
+; 1.125 ; counter[12]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.418      ;
+; 1.125 ; counter[14]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.418      ;
+; 1.126 ; counter[20]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.419      ;
+; 1.126 ; counter[10]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.419      ;
+; 1.127 ; counter[24]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.420      ;
+; 1.133 ; counter[6]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.426      ;
+; 1.133 ; counter[0]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.426      ;
+; 1.133 ; counter[16]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.426      ;
+; 1.134 ; counter[14]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.427      ;
+; 1.134 ; counter[12]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.427      ;
+; 1.134 ; counter[18]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.427      ;
+; 1.135 ; counter[10]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.428      ;
+; 1.135 ; counter[20]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.428      ;
+; 1.136 ; counter[24]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.429      ;
+; 1.152 ; sync[1]           ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.076      ; 1.440      ;
+; 1.167 ; button_pressed    ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.460      ;
+; 1.167 ; button_pressed    ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.460      ;
+; 1.167 ; button_pressed    ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.460      ;
+; 1.167 ; button_pressed    ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.460      ;
+; 1.246 ; counter[3]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.539      ;
+; 1.247 ; counter[5]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.540      ;
+; 1.247 ; counter[17]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.540      ;
+; 1.248 ; counter[29]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.541      ;
+; 1.248 ; counter[27]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.541      ;
+; 1.248 ; counter[9]        ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.541      ;
+; 1.255 ; counter[3]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.548      ;
+; 1.256 ; counter[5]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.549      ;
+; 1.256 ; counter[17]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.549      ;
+; 1.257 ; counter[27]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.550      ;
+; 1.257 ; counter[9]        ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.550      ;
+; 1.264 ; counter[0]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.557      ;
+; 1.264 ; counter[6]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.557      ;
+; 1.264 ; counter[16]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.557      ;
+; 1.265 ; counter[14]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.558      ;
+; 1.265 ; counter[12]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.558      ;
+; 1.265 ; counter[18]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.558      ;
+; 1.266 ; counter[20]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.559      ;
+; 1.266 ; counter[10]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.559      ;
+; 1.267 ; counter[24]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.560      ;
+; 1.273 ; counter[0]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.566      ;
+; 1.273 ; counter[6]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.566      ;
+; 1.273 ; counter[16]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.566      ;
+; 1.274 ; counter[14]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.567      ;
+; 1.274 ; counter[12]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.567      ;
+; 1.274 ; counter[18]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.567      ;
+; 1.275 ; counter[20]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.568      ;
+; 1.275 ; counter[10]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.568      ;
+; 1.276 ; counter[24]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.569      ;
+; 1.288 ; counter[31]       ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.080      ; 1.580      ;
+; 1.293 ; counter[8]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.586      ;
+; 1.295 ; counter[4]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.081      ; 1.588      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 33.818 ns
+
+
+
+
++----------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                  ;
++-----------+-----------------+---------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name    ; Note ;
++-----------+-----------------+---------------+------+
+; 140.9 MHz ; 140.9 MHz       ; OscilatorMain ;      ;
++-----------+-----------------+---------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------+
+; Slow 1200mV 0C Model Setup Summary     ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; OscilatorMain ; 12.903 ; 0.000         ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Slow 1200mV 0C Model Hold Summary     ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; OscilatorMain ; 0.402 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------+-------+--------------------------+
+; Clock         ; Slack ; End Point TNS            ;
++---------------+-------+--------------------------+
+; OscilatorMain ; 9.752 ; 0.000                    ;
++---------------+-------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'OscilatorMain'                                                                 ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; 12.903 ; counter[30] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.903 ; counter[30] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.046      ;
+; 12.919 ; counter[30] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 12.919 ; counter[30] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 7.030      ;
+; 13.121 ; counter[28] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.121 ; counter[28] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.122 ; counter[9]  ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.828      ;
+; 13.137 ; counter[28] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.137 ; counter[28] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.073     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.138 ; counter[9]  ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.812      ;
+; 13.289 ; counter[12] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.661      ;
+; 13.289 ; counter[12] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.661      ;
+; 13.289 ; counter[12] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.661      ;
+; 13.289 ; counter[12] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.072     ; 6.661      ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'OscilatorMain'                                                                             ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.402 ; debounced_switch  ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.669      ;
+; 0.448 ; switch_delay      ; button_pressed    ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.715      ;
+; 0.470 ; shift_register[1] ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.737      ;
+; 0.472 ; shift_register[4] ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.739      ;
+; 0.493 ; shift_register[2] ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.760      ;
+; 0.642 ; sync[0]           ; sync[1]           ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.910      ;
+; 0.667 ; shift_register[3] ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.934      ;
+; 0.705 ; counter[3]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.972      ;
+; 0.705 ; counter[5]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.972      ;
+; 0.705 ; counter[29]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.973      ;
+; 0.706 ; counter[17]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.974      ;
+; 0.706 ; counter[27]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.974      ;
+; 0.707 ; counter[31]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.975      ;
+; 0.708 ; counter[6]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.975      ;
+; 0.708 ; counter[9]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.975      ;
+; 0.709 ; counter[16]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.977      ;
+; 0.710 ; counter[14]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.977      ;
+; 0.710 ; counter[18]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.978      ;
+; 0.711 ; counter[10]       ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.978      ;
+; 0.711 ; counter[12]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 0.978      ;
+; 0.711 ; counter[20]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.979      ;
+; 0.712 ; counter[24]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 0.980      ;
+; 0.733 ; counter[0]        ; counter[0]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.000      ;
+; 0.850 ; counter[19]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.118      ;
+; 0.850 ; counter[21]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.118      ;
+; 0.858 ; counter[7]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.125      ;
+; 0.858 ; counter[25]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.126      ;
+; 0.861 ; counter[8]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.128      ;
+; 0.863 ; counter[4]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.130      ;
+; 0.863 ; counter[30]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.131      ;
+; 0.866 ; counter[13]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.133      ;
+; 0.868 ; counter[15]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.135      ;
+; 0.868 ; counter[23]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.136      ;
+; 0.870 ; counter[11]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.137      ;
+; 0.871 ; counter[22]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.139      ;
+; 0.876 ; counter[26]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.144      ;
+; 0.876 ; counter[28]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.144      ;
+; 0.878 ; counter[2]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.145      ;
+; 0.883 ; counter[1]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.150      ;
+; 1.027 ; counter[16]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.295      ;
+; 1.027 ; counter[5]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.294      ;
+; 1.027 ; counter[6]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.294      ;
+; 1.027 ; counter[3]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.294      ;
+; 1.027 ; counter[29]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.295      ;
+; 1.027 ; counter[0]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.294      ;
+; 1.028 ; counter[18]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.296      ;
+; 1.028 ; counter[20]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.296      ;
+; 1.028 ; counter[14]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.295      ;
+; 1.028 ; counter[27]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.296      ;
+; 1.029 ; counter[12]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.296      ;
+; 1.029 ; counter[10]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.296      ;
+; 1.030 ; counter[17]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.298      ;
+; 1.030 ; counter[24]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.298      ;
+; 1.032 ; counter[9]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.299      ;
+; 1.039 ; sync[1]           ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.067      ; 1.301      ;
+; 1.042 ; counter[6]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.309      ;
+; 1.043 ; counter[14]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.311      ;
+; 1.043 ; counter[0]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.310      ;
+; 1.043 ; counter[16]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.311      ;
+; 1.044 ; counter[18]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.312      ;
+; 1.045 ; counter[12]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.312      ;
+; 1.045 ; counter[10]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.312      ;
+; 1.045 ; counter[20]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.313      ;
+; 1.046 ; counter[24]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.314      ;
+; 1.084 ; button_pressed    ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.351      ;
+; 1.084 ; button_pressed    ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.351      ;
+; 1.084 ; button_pressed    ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.351      ;
+; 1.084 ; button_pressed    ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.351      ;
+; 1.120 ; counter[3]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.387      ;
+; 1.121 ; counter[27]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.389      ;
+; 1.121 ; counter[29]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.389      ;
+; 1.121 ; counter[5]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.388      ;
+; 1.125 ; counter[17]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.393      ;
+; 1.127 ; counter[9]        ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.394      ;
+; 1.149 ; counter[0]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.416      ;
+; 1.149 ; counter[6]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.416      ;
+; 1.149 ; counter[14]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.417      ;
+; 1.149 ; counter[3]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.416      ;
+; 1.149 ; counter[5]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.416      ;
+; 1.149 ; counter[16]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.417      ;
+; 1.150 ; counter[20]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.418      ;
+; 1.150 ; counter[27]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.418      ;
+; 1.150 ; counter[18]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.418      ;
+; 1.151 ; counter[12]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.418      ;
+; 1.151 ; counter[10]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.418      ;
+; 1.152 ; counter[24]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.420      ;
+; 1.152 ; counter[17]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.420      ;
+; 1.154 ; counter[9]        ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.421      ;
+; 1.155 ; counter[31]       ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.422      ;
+; 1.158 ; counter[8]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.425      ;
+; 1.160 ; counter[4]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.427      ;
+; 1.160 ; counter[30]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.428      ;
+; 1.160 ; counter[22]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.428      ;
+; 1.164 ; counter[6]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.431      ;
+; 1.165 ; counter[0]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.072      ; 1.432      ;
+; 1.165 ; counter[14]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.433      ;
+; 1.165 ; counter[16]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.433      ;
+; 1.166 ; counter[12]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.434      ;
+; 1.166 ; counter[18]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.434      ;
+; 1.167 ; counter[20]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.073      ; 1.435      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 34.241 ns
+
+
+
+
++----------------------------------------+
+; Fast 1200mV 0C Model Setup Summary     ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; OscilatorMain ; 16.732 ; 0.000         ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Fast 1200mV 0C Model Hold Summary     ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; OscilatorMain ; 0.187 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------+-------+--------------------------+
+; Clock         ; Slack ; End Point TNS            ;
++---------------+-------+--------------------------+
+; OscilatorMain ; 9.262 ; 0.000                    ;
++---------------+-------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'OscilatorMain'                                                                 ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+; 16.732 ; counter[30] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.732 ; counter[30] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.238      ;
+; 16.748 ; counter[30] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.748 ; counter[30] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.222      ;
+; 16.834 ; counter[28] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.834 ; counter[28] ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.136      ;
+; 16.850 ; counter[28] ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.850 ; counter[28] ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.120      ;
+; 16.852 ; counter[9]  ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[3]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[4]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[5]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[6]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[10] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[8]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[9]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[11] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[12] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[13] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[14] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.852 ; counter[9]  ; counter[15] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.119      ;
+; 16.868 ; counter[9]  ; counter[26] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[16] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[17] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[18] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[19] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[20] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[21] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[22] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[23] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[24] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[25] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[27] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[29] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[28] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[30] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.868 ; counter[9]  ; counter[31] ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.036     ; 3.103      ;
+; 16.924 ; counter[29] ; counter[0]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.046      ;
+; 16.924 ; counter[29] ; counter[7]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.046      ;
+; 16.924 ; counter[29] ; counter[1]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.046      ;
+; 16.924 ; counter[29] ; counter[2]  ; OscilatorMain ; OscilatorMain ; 20.000       ; -0.037     ; 3.046      ;
++--------+-------------+-------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'OscilatorMain'                                                                             ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.187 ; debounced_switch  ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.307      ;
+; 0.197 ; switch_delay      ; button_pressed    ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.318      ;
+; 0.205 ; shift_register[2] ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.326      ;
+; 0.208 ; shift_register[1] ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.329      ;
+; 0.210 ; shift_register[4] ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.331      ;
+; 0.271 ; sync[0]           ; sync[1]           ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.391      ;
+; 0.277 ; shift_register[3] ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.398      ;
+; 0.303 ; counter[31]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.424      ;
+; 0.304 ; counter[3]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.424      ;
+; 0.304 ; counter[5]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.424      ;
+; 0.304 ; counter[17]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.425      ;
+; 0.304 ; counter[27]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.425      ;
+; 0.304 ; counter[29]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.425      ;
+; 0.305 ; counter[6]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; counter[16]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.426      ;
+; 0.306 ; counter[9]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; counter[14]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; counter[18]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.427      ;
+; 0.306 ; counter[20]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.427      ;
+; 0.306 ; counter[24]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.427      ;
+; 0.307 ; counter[10]       ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.427      ;
+; 0.307 ; counter[12]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.427      ;
+; 0.316 ; counter[0]        ; counter[0]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.436      ;
+; 0.363 ; counter[25]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.484      ;
+; 0.365 ; counter[7]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.485      ;
+; 0.365 ; counter[4]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.485      ;
+; 0.365 ; counter[8]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.485      ;
+; 0.365 ; counter[30]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.486      ;
+; 0.366 ; counter[19]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.487      ;
+; 0.366 ; counter[21]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.487      ;
+; 0.369 ; counter[22]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.490      ;
+; 0.371 ; counter[2]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.491      ;
+; 0.372 ; counter[11]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.492      ;
+; 0.372 ; counter[13]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.492      ;
+; 0.372 ; counter[23]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.493      ;
+; 0.373 ; counter[26]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.494      ;
+; 0.373 ; counter[28]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.494      ;
+; 0.375 ; counter[15]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.495      ;
+; 0.381 ; counter[1]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.501      ;
+; 0.453 ; counter[5]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.573      ;
+; 0.453 ; counter[17]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.574      ;
+; 0.453 ; counter[3]        ; counter[4]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.573      ;
+; 0.453 ; counter[29]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.574      ;
+; 0.453 ; counter[27]       ; counter[28]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.574      ;
+; 0.455 ; counter[9]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.575      ;
+; 0.463 ; counter[16]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.584      ;
+; 0.463 ; counter[6]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.583      ;
+; 0.463 ; counter[0]        ; counter[1]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.583      ;
+; 0.464 ; counter[24]       ; counter[25]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.585      ;
+; 0.464 ; counter[18]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.585      ;
+; 0.464 ; counter[20]       ; counter[21]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.585      ;
+; 0.464 ; counter[14]       ; counter[15]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.584      ;
+; 0.465 ; counter[10]       ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.585      ;
+; 0.465 ; counter[12]       ; counter[13]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.585      ;
+; 0.466 ; counter[14]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.587      ;
+; 0.466 ; counter[6]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.586      ;
+; 0.466 ; counter[0]        ; counter[2]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.586      ;
+; 0.466 ; counter[16]       ; counter[18]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.587      ;
+; 0.467 ; counter[18]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.588      ;
+; 0.467 ; counter[20]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.588      ;
+; 0.467 ; counter[24]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.588      ;
+; 0.468 ; counter[12]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.588      ;
+; 0.468 ; counter[10]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.588      ;
+; 0.474 ; sync[1]           ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.032      ; 0.590      ;
+; 0.481 ; button_pressed    ; shift_register[1] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.602      ;
+; 0.481 ; button_pressed    ; shift_register[4] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.602      ;
+; 0.481 ; button_pressed    ; shift_register[3] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.602      ;
+; 0.481 ; button_pressed    ; shift_register[2] ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.602      ;
+; 0.502 ; counter[31]       ; debounced_switch  ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.622      ;
+; 0.512 ; counter[25]       ; counter[26]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.633      ;
+; 0.514 ; counter[7]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.634      ;
+; 0.515 ; counter[19]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.636      ;
+; 0.515 ; counter[21]       ; counter[22]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.636      ;
+; 0.516 ; counter[29]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.637      ;
+; 0.516 ; counter[3]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.636      ;
+; 0.516 ; counter[27]       ; counter[29]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.637      ;
+; 0.516 ; counter[5]        ; counter[7]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.636      ;
+; 0.516 ; counter[17]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.637      ;
+; 0.518 ; counter[9]        ; counter[11]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.638      ;
+; 0.519 ; counter[3]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.639      ;
+; 0.519 ; counter[27]       ; counter[30]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.640      ;
+; 0.519 ; counter[5]        ; counter[8]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.639      ;
+; 0.519 ; counter[17]       ; counter[20]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.640      ;
+; 0.521 ; counter[23]       ; counter[24]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.642      ;
+; 0.521 ; counter[13]       ; counter[14]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.641      ;
+; 0.521 ; counter[11]       ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.641      ;
+; 0.521 ; counter[9]        ; counter[12]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.641      ;
+; 0.523 ; counter[8]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.643      ;
+; 0.523 ; counter[15]       ; counter[16]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.644      ;
+; 0.523 ; counter[30]       ; counter[31]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.644      ;
+; 0.523 ; counter[4]        ; counter[5]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.643      ;
+; 0.526 ; counter[8]        ; counter[10]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.646      ;
+; 0.526 ; counter[4]        ; counter[6]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.646      ;
+; 0.527 ; counter[22]       ; counter[23]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.648      ;
+; 0.529 ; counter[2]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.649      ;
+; 0.529 ; counter[14]       ; counter[17]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.650      ;
+; 0.529 ; counter[16]       ; counter[19]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.650      ;
+; 0.529 ; counter[6]        ; counter[9]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.649      ;
+; 0.529 ; counter[0]        ; counter[3]        ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.036      ; 0.649      ;
+; 0.530 ; counter[24]       ; counter[27]       ; OscilatorMain ; OscilatorMain ; 0.000        ; 0.037      ; 0.651      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 37.183 ns
+
+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 12.407 ; 0.187 ; N/A      ; N/A     ; 9.262               ;
+;  OscilatorMain   ; 12.407 ; 0.187 ; N/A      ; N/A     ; 9.262               ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  OscilatorMain   ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; o_leds[4]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_leds[3]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_leds[2]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_leds[1]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; clk                     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; rst                     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; i_switch_1              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_DATA0~          ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_leds[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.12 V              ; -0.0818 V           ; 0.205 V                              ; 0.244 V                              ; 8.86e-10 s                  ; 6.56e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.12 V             ; -0.0818 V          ; 0.205 V                             ; 0.244 V                             ; 8.86e-10 s                 ; 6.56e-10 s                 ; No                        ; No                        ;
+; o_leds[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.12 V              ; -0.0818 V           ; 0.205 V                              ; 0.244 V                              ; 8.86e-10 s                  ; 6.56e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.12 V             ; -0.0818 V          ; 0.205 V                             ; 0.244 V                             ; 8.86e-10 s                 ; 6.56e-10 s                 ; No                        ; No                        ;
+; o_leds[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.12 V              ; -0.0818 V           ; 0.205 V                              ; 0.244 V                              ; 8.86e-10 s                  ; 6.56e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.12 V             ; -0.0818 V          ; 0.205 V                             ; 0.244 V                             ; 8.86e-10 s                 ; 6.56e-10 s                 ; No                        ; No                        ;
+; o_leds[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.38e-09 V                   ; 3.12 V              ; -0.0818 V           ; 0.205 V                              ; 0.244 V                              ; 8.86e-10 s                  ; 6.56e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 6.38e-09 V                  ; 3.12 V             ; -0.0818 V          ; 0.205 V                             ; 0.244 V                             ; 8.86e-10 s                 ; 6.56e-10 s                 ; No                        ; No                        ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.51e-09 V                   ; 3.18 V              ; -0.157 V            ; 0.147 V                              ; 0.259 V                              ; 2.81e-10 s                  ; 2.53e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.51e-09 V                  ; 3.18 V             ; -0.157 V           ; 0.147 V                             ; 0.259 V                             ; 2.81e-10 s                 ; 2.53e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.57e-09 V                   ; 2.37 V              ; -0.00683 V          ; 0.171 V                              ; 0.018 V                              ; 4.97e-10 s                  ; 6.66e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.57e-09 V                  ; 2.37 V             ; -0.00683 V         ; 0.171 V                             ; 0.018 V                             ; 4.97e-10 s                 ; 6.66e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_leds[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0469 V           ; 0.191 V                              ; 0.215 V                              ; 1.08e-09 s                  ; 8.62e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0469 V          ; 0.191 V                             ; 0.215 V                             ; 1.08e-09 s                 ; 8.62e-10 s                 ; Yes                       ; No                        ;
+; o_leds[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0469 V           ; 0.191 V                              ; 0.215 V                              ; 1.08e-09 s                  ; 8.62e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0469 V          ; 0.191 V                             ; 0.215 V                             ; 1.08e-09 s                 ; 8.62e-10 s                 ; Yes                       ; No                        ;
+; o_leds[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0469 V           ; 0.191 V                              ; 0.215 V                              ; 1.08e-09 s                  ; 8.62e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0469 V          ; 0.191 V                             ; 0.215 V                             ; 1.08e-09 s                 ; 8.62e-10 s                 ; Yes                       ; No                        ;
+; o_leds[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.04e-07 V                   ; 3.11 V              ; -0.0469 V           ; 0.191 V                              ; 0.215 V                              ; 1.08e-09 s                  ; 8.62e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 5.04e-07 V                  ; 3.11 V             ; -0.0469 V          ; 0.191 V                             ; 0.215 V                             ; 1.08e-09 s                 ; 8.62e-10 s                 ; Yes                       ; No                        ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.6e-07 V                    ; 3.13 V              ; -0.103 V            ; 0.164 V                              ; 0.134 V                              ; 3.14e-10 s                  ; 4.05e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.6e-07 V                   ; 3.13 V             ; -0.103 V           ; 0.164 V                             ; 0.134 V                             ; 3.14e-10 s                 ; 4.05e-10 s                 ; Yes                       ; No                        ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.54e-07 V                   ; 2.34 V              ; -0.00774 V          ; 0.109 V                              ; 0.026 V                              ; 6.58e-10 s                  ; 8.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.54e-07 V                  ; 2.34 V             ; -0.00774 V         ; 0.109 V                             ; 0.026 V                             ; 6.58e-10 s                 ; 8.24e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_leds[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.57 V              ; -0.0855 V           ; 0.315 V                              ; 0.175 V                              ; 6.79e-10 s                  ; 6.15e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.57 V             ; -0.0855 V          ; 0.315 V                             ; 0.175 V                             ; 6.79e-10 s                 ; 6.15e-10 s                 ; No                        ; No                        ;
+; o_leds[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.57 V              ; -0.0855 V           ; 0.315 V                              ; 0.175 V                              ; 6.79e-10 s                  ; 6.15e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.57 V             ; -0.0855 V          ; 0.315 V                             ; 0.175 V                             ; 6.79e-10 s                 ; 6.15e-10 s                 ; No                        ; No                        ;
+; o_leds[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.57 V              ; -0.0855 V           ; 0.315 V                              ; 0.175 V                              ; 6.79e-10 s                  ; 6.15e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.57 V             ; -0.0855 V          ; 0.315 V                             ; 0.175 V                             ; 6.79e-10 s                 ; 6.15e-10 s                 ; No                        ; No                        ;
+; o_leds[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.25e-07 V                   ; 3.57 V              ; -0.0855 V           ; 0.315 V                              ; 0.175 V                              ; 6.79e-10 s                  ; 6.15e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.25e-07 V                  ; 3.57 V             ; -0.0855 V          ; 0.315 V                             ; 0.175 V                             ; 6.79e-10 s                 ; 6.15e-10 s                 ; No                        ; No                        ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 6.54e-08 V                   ; 3.66 V              ; -0.26 V             ; 0.41 V                               ; 0.32 V                               ; 1.57e-10 s                  ; 2.15e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 6.54e-08 V                  ; 3.66 V             ; -0.26 V            ; 0.41 V                              ; 0.32 V                              ; 1.57e-10 s                 ; 2.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Transfers                                                           ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; OscilatorMain ; OscilatorMain ; 3085     ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------+
+; Hold Transfers                                                            ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; OscilatorMain ; OscilatorMain ; 3085     ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++---------------------------------------------+
+; Clock Status Summary                        ;
++--------+---------------+------+-------------+
+; Target ; Clock         ; Type ; Status      ;
++--------+---------------+------+-------------+
+; clk    ; OscilatorMain ; Base ; Constrained ;
++--------+---------------+------+-------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 23.1std.0 Build 991 11/28/2023 Patches 0.02std SC Lite Edition
+    Info: Processing started: Thu Jun 27 19:40:59 2024
+Info: Command: quartus_sta led_shift_reg -c led_shift_reg
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'timing_constaints.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From OscilatorMain (Rise) to OscilatorMain (Rise) (setup and hold)
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info (332146): Worst-case setup slack is 12.407
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    12.407               0.000 OscilatorMain 
+Info (332146): Worst-case hold slack is 0.453
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.453               0.000 OscilatorMain 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.744
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.744               0.000 OscilatorMain 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 33.818 ns
+    Info (332114): 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From OscilatorMain (Rise) to OscilatorMain (Rise) (setup and hold)
+Info (332146): Worst-case setup slack is 12.903
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    12.903               0.000 OscilatorMain 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.402               0.000 OscilatorMain 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.752
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.752               0.000 OscilatorMain 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 34.241 ns
+    Info (332114): 
+Info: Analyzing Fast 1200mV 0C Model
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From OscilatorMain (Rise) to OscilatorMain (Rise) (setup and hold)
+Info (332146): Worst-case setup slack is 16.732
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    16.732               0.000 OscilatorMain 
+Info (332146): Worst-case hold slack is 0.187
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.187               0.000 OscilatorMain 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.262
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.262               0.000 OscilatorMain 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 37.183 ns
+    Info (332114): 
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Thu Jun 27 19:41:01 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

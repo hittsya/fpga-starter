@@ -1,0 +1,31 @@
+|pwm_led
+clk => o_pwm~reg0.CLK
+clk => pwm_counter[0].CLK
+clk => pwm_counter[1].CLK
+clk => pwm_counter[2].CLK
+clk => pwm_counter[3].CLK
+clk => pwm_counter[4].CLK
+clk => pwm_counter[5].CLK
+clk => pwm_counter[6].CLK
+clk => pwm_counter[7].CLK
+clk => pwm_counter[8].CLK
+clk => pwm_counter[9].CLK
+clk => pwm_counter[10].CLK
+clk => pwm_counter[11].CLK
+clk => pwm_counter[12].CLK
+clk => pwm_counter[13].CLK
+clk => pwm_counter[14].CLK
+clk => pwm_counter[15].CLK
+clk => pwm_counter[16].CLK
+clk => pwm_counter[17].CLK
+clk => pwm_counter[18].CLK
+clk => pwm_counter[19].CLK
+clk => pwm_counter[20].CLK
+clk => pwm_counter[21].CLK
+clk => pwm_counter[22].CLK
+clk => pwm_counter[23].CLK
+clk => pwm_counter[24].CLK
+clk => pwm_counter[25].CLK
+o_pwm <= o_pwm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
